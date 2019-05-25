@@ -1,0 +1,12 @@
+*.pyc
+*.out
+*.err
+*.pickle
+*.iml
+__pycache__
+*~
+.idea/*
+experiments/*
+*/summaries_*/*
+*.DS_Store
+*/target/*

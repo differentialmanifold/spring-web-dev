@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.platform.module.dao.dao.GroupDAO">
+
+    <resultMap id="group" type="com.example.platform.module.dao.vo.GroupVO">
+	  <result property="id"                column="id"                 jdbcType="INTEGER"   javaType="java.lang.Integer"/>
+	  <result property="groupName"         column="group_name"         jdbcType="VARCHAR"   javaType="java.lang.String"/>
+	  <result property="topicID"           column="topic_id"           jdbcType="INTEGER"   javaType="java.lang.Integer"/>
+	  <result property="levelID"           column="level_id"           jdbcType="INTEGER"   javaType="java.lang.Integer"/>
+	  <result property="cron"              column="cron"               jdbcType="VARCHAR"   javaType="java.lang.String"/>
+	  <result property="isEnable"          column="is_enable"          jdbcType="INTEGER"   javaType="java.lang.Integer"/>
+      <result property="descInfo"          column="desc_info"          jdbcType="VARCHAR"   javaType="java.lang.String"/>
+      <result property="createUser"        column="create_user"        jdbcType="VARCHAR"   javaType="java.lang.String"/>
+	  <result column="create_date" property="createDate" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+	  <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+	</resultMap>
+	
+	<!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+        id,group_name,topic_id,level_id,cron,is_enable,desc_info,create_user,create_date,update_date
+    </sql>
+	
+    <select id="get" resultMap="group" parameterType="hashmap">
+	    select 
+	       <include refid="Base_Column_List" /> 
+	    from 
+	       t_group t 
+	    where
+	       1 = 1
+	    <if test="id != null">
+	    and 
+	       t.id=#{id}
+	    </if>
+	    <if test="groupName != null">
+	    and
+	       t.group_name=#{groupName}
+	    </if> 
+	</select>
+
+	
+	<select id="getWithTLName" resultType="java.util.HashMap" parameterType="hashmap">
+        select 
+           g.id as id,
+           g.group_name as groupName,
+           g.topic_id as topicID,
+           g.level_id as levelID,
+           g.cron as cron,
+           g.is_enable as isEnable,
+           g.desc_info as descInfo,
+           g.create_user as createUser,
+           g.create_date as createDate,
+           g.update_date as updateDate
+        from 
+           t_group g
+        where
+           1 = 1
+        <if test="id != null">
+        and 
+           g.id=#{id}
+        </if>
+    </select>
+	
+	<select id="getListWithTLName" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+	   select 
+           g.id as id,
+           g.group_name as groupName,
+           g.topic_id as topicID,
+           g.level_id as levelID,
+           g.cron as cron,
+           g.is_enable as isEnable,
+           g.desc_info as descInfo,
+           g.create_user as createUser,
+           g.create_date as createDate,
+           g.update_date as updateDate
+       from 
+           t_group g
+       where
+           1 = 1
+       <if test="groupName != null and groupName != ''">
+       and
+           g.group_name like CONCAT('%',#{groupName}, '%')
+       </if>
+       <if test="createUser != null and createUser != ''">
+       <!-- and
+           g.create_user like CONCAT('%',#{createUser},'%') -->
+           and g.create_user = #{createUser}
+       </if>
+       <if test="topicId != 0">
+       and
+           g.topic_id = #{topicId}
+       </if>
+       <if test="levelId != 0">
+       and
+           g.level_id = #{levelId}
+       </if>
+       <if test="isEnable &gt; -1">
+       and
+           g.is_enable = #{isEnable}
+       </if>
+       order by
+           g.id desc
+	</select>
+
+	
+	<insert id="add" parameterType="com.example.platform.module.dao.vo.GroupVO">
+	   insert into 
+	       t_group 
+	   values
+	       (null,
+	       #{groupName},
+	       #{topicID},
+	       #{levelID},
+	       #{cron},
+           #{isEnable},
+	       #{descInfo},
+           #{createUser},
+           now(),
+           now()
+	       )
+	</insert>
+	
+	<update id="update" parameterType="com.example.platform.module.dao.vo.GroupVO">
+	   update
+	       t_group
+	   set
+	       <if test="groupName != null">
+	       group_name = #{groupName},
+	       </if>
+	       <if test="topicID != null">
+           topic_id = #{topicID},
+           </if>
+	       <if test="levelID != null">
+           level_id = #{levelID},
+           </if>
+           <if test="cron != null">
+           cron = #{cron},
+           </if>
+           <if test="isEnable != null">
+           is_enable = #{isEnable},
+           </if>
+           <if test="descInfo != null">
+           desc_info = #{descInfo},
+           </if>
+           <if test="createUser != null">
+           create_user = #{createUser},
+           </if>
+           update_date = now()
+       where
+           id = #{id}
+	</update>
+	
+	<delete id="delete">
+	delete from t_group where id = #{id}
+	</delete>
+
+</mapper>
