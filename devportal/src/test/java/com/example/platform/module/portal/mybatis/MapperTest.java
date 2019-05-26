@@ -1,7 +1,6 @@
 package com.example.platform.module.portal.mybatis;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.example.platform.module.common.response.ResponseResult;
 import com.example.platform.module.dao.dto.GroupDTO;
 import com.example.platform.module.portal.rest.GroupAction;
 import com.example.platform.module.service.GroupService;
@@ -13,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring-context.xml"})
+@ContextConfiguration(locations = {"classpath:spring/spring-context.xml"})
 public class MapperTest {
 	
 	@Autowired

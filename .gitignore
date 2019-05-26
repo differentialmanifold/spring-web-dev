@@ -3,6 +3,7 @@
 *.err
 *.pickle
 *.iml
+*.bak
 __pycache__
 *~
 .idea/*

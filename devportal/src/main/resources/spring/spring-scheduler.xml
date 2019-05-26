@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/task 
+    http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<description>Spring Scheduler配置</description>
+	
+	<bean name="schedulerCluster" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" destroy-method="destroy">
+          <property name="applicationContextSchedulerContextKey" value="applicationContext"/>
+          <property name="configLocation" value="classpath:quartz.properties"/>
+    </bean>
+
+</beans>

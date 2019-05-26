@@ -24,4 +24,7 @@ public class ConstantUtil {
      */
     public static final String REGEX_MOBILE = "^1(3|4|5|7|8)[0-9]\\d{8}$";
 
+	public final static String SCHEDULER_TYPE_SYNC         = "sync_scheduler";
+	public final static String SCHEDULER_TYPE_OTHER        = "other_scheduler";
+
 }
