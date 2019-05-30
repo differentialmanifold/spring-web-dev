@@ -17,7 +17,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring-context.xml</param-value>
+        <param-value>classpath:spring-config/spring-context.xml</param-value>
     </context-param>
 
 	<listener>
@@ -75,7 +75,7 @@
         <load-on-startup>1</load-on-startup>
         <init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/spring-servlet.xml</param-value>
+			<param-value>classpath:spring-config/spring-servlet.xml</param-value>
 		</init-param>
     </servlet>
     <servlet-mapping>

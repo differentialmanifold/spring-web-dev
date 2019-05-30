@@ -1,4 +1,4 @@
-package com.example.platform.module.common.factory;
+package com.example.platform.module.portal.factory;
 
 import com.example.platform.module.service.GroupService;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -9,7 +9,7 @@ public class SpringApplicationContextFactory {
 	
 	public static AbstractApplicationContext getSpringContext() {
 		if(springContext == null) {
-		    springContext = new  ClassPathXmlApplicationContext("spring-context.xml");
+		    springContext = new  ClassPathXmlApplicationContext("classpath:spring-config/spring-context.xml");
 		}
 		return springContext;
 	}

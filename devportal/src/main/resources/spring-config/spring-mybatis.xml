@@ -37,7 +37,7 @@
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描Mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:com/example/platform/module/dao/mapper/*.xml"/>
-        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="configLocation" value="classpath:spring-config/mybatis-config.xml"/>
         <property name="typeAliasesPackage" value="com.example.platform.module.dao.*"/>
         <property name="plugins">
             <array>
