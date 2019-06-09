@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@Service("taskService")
+//@Service("taskService")
 public class TaskService {
 	
 	private final Logger LOG = LoggerFactory.getLogger(TaskService.class);    

@@ -42,6 +42,8 @@
 
 
 	<import resource="spring-mybatis.xml" />
-	<import resource="spring-scheduler.xml" />
+	<import resource="spring-aop.xml"/>
+	<!--<import resource="spring-redis.xml" />-->
+	<!--<import resource="spring-scheduler.xml" />-->
 	
 </beans>

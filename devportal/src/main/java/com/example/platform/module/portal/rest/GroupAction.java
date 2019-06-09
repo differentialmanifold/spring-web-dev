@@ -3,6 +3,7 @@ package com.example.platform.module.portal.rest;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -13,6 +14,7 @@ import com.example.platform.module.common.exception.BadRequestException;
 import com.example.platform.module.common.exception.ForbiddenException;
 import com.example.platform.module.common.exception.ResourceNotFoundException;
 import com.example.platform.module.common.response.ResponseResult;
+import com.example.platform.module.common.utils.RedisManager;
 import com.example.platform.module.common.utils.TransformUtil;
 import com.example.platform.module.common.utils.UserDetailUtil;
 import com.example.platform.module.dao.dto.GroupDTO;
@@ -29,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
 
 import static com.example.platform.module.common.response.ResponseResult.SUCCESS;
 import static com.example.platform.module.common.utils.GlobalContainer.threadPool;
@@ -46,6 +49,7 @@ public class GroupAction extends BaseAction {
     @Autowired
     private GroupService groupService;
 
+
     
     @Autowired
     private AppProperty appProperty;
@@ -56,7 +60,7 @@ public class GroupAction extends BaseAction {
 
         return "It's OK , process is running !";
     }
-    
+
     
     @RequestMapping(value = "/{id}", method = { RequestMethod.GET })
     @ResponseBody
