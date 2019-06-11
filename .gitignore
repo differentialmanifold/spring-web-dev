@@ -11,3 +11,4 @@ experiments/*
 */summaries_*/*
 *.DS_Store
 */target/*
+**/pro/*

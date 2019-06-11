@@ -23,26 +23,6 @@
 
     <build>
         <finalName>dev-portal-${package.environment}</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-                <excludes>
-                    <exclude>disconf.properties</exclude>
-                    <exclude>log4j.properties</exclude>
-                    <exclude>dev/</exclude>
-                    <exclude>test/</exclude>
-                </excludes>
-            </resource>
-        </resources>
     </build>
 
 </project>
