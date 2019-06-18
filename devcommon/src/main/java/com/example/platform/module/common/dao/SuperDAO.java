@@ -2,7 +2,7 @@ package com.example.platform.module.common.dao;
 
 /**
  * <p>
- * 自定义 dao 父类
+ * 自定义 com.example.platform.module.dao 父类
  * </p>
  */
 public interface SuperDAO<T> extends com.baomidou.mybatisplus.mapper.BaseMapper<T> {

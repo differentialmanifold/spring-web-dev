@@ -11,6 +11,7 @@
     <modules>
         <module>devcommon</module>
         <module>devportal</module>
+        <module>devhadoop</module>
     </modules>
 
 

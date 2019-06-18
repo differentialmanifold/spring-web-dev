@@ -27,4 +27,9 @@ public class ConstantUtil {
 	public final static String SCHEDULER_TYPE_SYNC         = "sync_scheduler";
 	public final static String SCHEDULER_TYPE_OTHER        = "other_scheduler";
 
+
+	// hdfs hive超级用户
+	public static final String HIVE_SUPER_USER = "hive";
+	public static final String HDFS_SUPER_USER = "hdfs";
+
 }
