@@ -1,7 +1,6 @@
 package com.example.platform.module.hadoop.rest;
 
 
-import com.example.platform.module.common.action.BaseAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/hadoop")
-public class HadoopAction extends BaseAction {
+public class HadoopAction {
 
     private static final Logger logger = LoggerFactory.getLogger(HadoopAction.class);
 
@@ -25,7 +24,7 @@ public class HadoopAction extends BaseAction {
         return "It's OK , hadoop process is running !";
     }
 
-    @RequestMapping(value = "/hivetest", method = { RequestMethod.GET })
+    @RequestMapping(value = "/hivetest", method = {RequestMethod.GET})
     @ResponseBody
     public String hivetest() {
 

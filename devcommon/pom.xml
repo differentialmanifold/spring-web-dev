@@ -10,27 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dev-common</artifactId>
+    <version>${dev.common.version}</version>
     <packaging>jar</packaging>
 
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.properties</exclude>
-                </excludes>
-            </resource>
-        </resources>
-    </build>
+    <dependencies>
 
+
+    </dependencies>
 </project>

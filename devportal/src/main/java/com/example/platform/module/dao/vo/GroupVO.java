@@ -3,7 +3,7 @@ package com.example.platform.module.dao.vo;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.example.platform.module.common.entity.SuperEntity;
+import com.example.platform.module.common.extend.entity.SuperEntity;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import com.baomidou.mybatisplus.annotations.TableField;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
-import com.example.platform.module.common.dao.SuperDAO;
+import com.example.platform.module.common.extend.dao.SuperDAO;
 import com.example.platform.module.dao.vo.GroupVO;
 
 public interface GroupDAO extends SuperDAO<GroupVO> {

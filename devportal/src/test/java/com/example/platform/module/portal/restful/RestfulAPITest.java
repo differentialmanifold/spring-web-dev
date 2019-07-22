@@ -2,13 +2,13 @@ package com.example.platform.module.portal.restful;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.platform.module.common.http.HttpProcess;
-import com.example.platform.module.common.http.RestfulHttpFactory;
+import com.example.platform.module.common.extend.http.HttpProcess;
+import com.example.platform.module.common.extend.http.RestfulHttpFactory;
 
-import com.example.platform.module.common.http.HttpClient.DevHttpResponse;
-import com.example.platform.module.common.quartz.entity.DevQuartzJobVO;
+import com.example.platform.module.common.extend.http.HttpClient.DevHttpResponse;
+import com.example.platform.module.common.extend.quartz.entity.DevQuartzJobVO;
 import com.example.platform.module.common.response.ResponseResult;
-import com.example.platform.module.common.utils.UserDetailUtil;
+import com.example.platform.module.common.extend.utils.UserDetailUtil;
 import com.example.platform.module.dao.vo.GroupVO;
 
 public class RestfulAPITest {

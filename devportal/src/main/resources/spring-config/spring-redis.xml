@@ -4,7 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-    <bean id="redisManager" class="com.example.platform.module.common.utils.RedisManager">
+    <bean id="redisManager" class="com.example.platform.module.common.extend.utils.RedisManager">
         <constructor-arg  index="0" type="java.lang.String" value="${redis.host}"/>
         <constructor-arg  index="1" type="int" value="${redis.port}"/>
         <constructor-arg  index="2" type="java.lang.String" value="${redis.password}"/>

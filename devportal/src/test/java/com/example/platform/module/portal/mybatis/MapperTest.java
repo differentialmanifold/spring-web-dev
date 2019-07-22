@@ -10,27 +10,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-config/spring-context.xml"})
 public class MapperTest {
-	
-	@Autowired
-	private GroupService groupService;
 
-	@Autowired
-	private GroupAction groupAction;
-	
-	@Test
-	public void test() throws Exception {
+    @Autowired
+    private GroupService groupService;
 
-		Page<GroupDTO> page = new Page<GroupDTO>(1, 10);
+    @Autowired
+    private GroupAction groupAction;
 
-		Page<GroupDTO> jobPage = groupService.getListWithTLName(page, null, null,
-				0, 0, -1);
-		
-		System.out.println(jobPage);
-		System.out.println("=========");
-	}
+    @Test
+    public void test() throws Exception {
+
+        Page<GroupDTO> page = new Page<GroupDTO>(1, 10);
+
+        Page<GroupDTO> jobPage = groupService.getListWithTLName(page, null, null,
+                0, 0, -1);
+
+        System.out.println(jobPage);
+        System.out.println("=========");
+    }
 
 }

@@ -1,6 +1,6 @@
 package com.example.platform.module.portal.aop;
 
-import com.example.platform.module.common.aop.AopService;
+import com.example.platform.module.common.extend.aop.AopService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
