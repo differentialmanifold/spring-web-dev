@@ -14,6 +14,8 @@
         <module>devhadoop</module>
         <module>devcommonextend</module>
         <module>devsimple</module>
+        <module>devmybatis</module>
+        <module>devmybatisproj</module>
     </modules>
 
 
@@ -28,9 +30,15 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <aspectjweaver.version>1.8.9</aspectjweaver.version>
+        <mysql.connector.java>6.0.6</mysql.connector.java>
+        <com.alibaba.druid.version>1.1.2</com.alibaba.druid.version>
+        <mybatis.version>3.4.4</mybatis.version>
+        <mybatis.spring.version>1.3.1</mybatis.spring.version>
 
         <dev.common.version>1.0-SNAPSHOT</dev.common.version>
         <dev.common.extend.version>1.0-SNAPSHOT</dev.common.extend.version>
+        <dev.mybatis.version>1.0-SNAPSHOT</dev.mybatis.version>
+        <dev.mybatis.proj.version>1.0-SNAPSHOT</dev.mybatis.proj.version>
         <dev.hadoop.version>1.0-SNAPSHOT</dev.hadoop.version>
         <dev.portal.version>1.0-SNAPSHOT</dev.portal.version>
         <dev.simple.version>1.0-SNAPSHOT</dev.simple.version>
