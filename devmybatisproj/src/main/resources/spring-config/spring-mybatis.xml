@@ -37,6 +37,19 @@
             </array>
         </property>
         <property name="typeAliasesPackage" value="com.example.platform.module.mybatis.entity"/>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <!-- 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 -->
+                    <property name="properties">
+                        <value>
+                            helperDialect=mysql
+                            reasonable=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
     <!-- 这里需要注意，不是mybatis默认的配置 -->

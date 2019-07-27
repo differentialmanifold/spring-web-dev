@@ -5,11 +5,14 @@ import com.example.platform.module.common.enumtype.ResultEnum;
 import com.example.platform.module.common.response.ResponseResult;
 import com.example.platform.module.mybatis.entity.TGroup;
 import com.example.platform.module.mybatis.proj.service.GroupService;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
@@ -31,18 +34,15 @@ public class GroupAction {
         return "It's OK , process is running !";
     }
 
-//    @RequestMapping(value = {"/list"}, method = {RequestMethod.GET})
-//    public ModelAndView getList(Country country,
-//                                @RequestParam(required = false, defaultValue = "1") int page,
-//                                @RequestParam(required = false, defaultValue = "10") int rows) {
-//        ModelAndView result = new ModelAndView(page_list);
-//        List<Country> countryList = countryService.selectByCountry(country, page, rows);
-//        result.addObject("pageInfo", new PageInfo<Country>(countryList));
-//        result.addObject("queryParam", country);
-//        result.addObject("page", page);
-//        result.addObject("rows", rows);
-//        return result;
-//    }
+    @RequestMapping(value = {"/list"}, method = {RequestMethod.GET})
+    @ResponseBody
+    public ResponseResult getList(@RequestBody TGroup group,
+                                  @RequestParam(value = "pageNum", required = false, defaultValue = "1") int pageNum,
+                                  @RequestParam(value = "pageSize", required = false, defaultValue = "10") int pageSize) {
+        List<TGroup> groupList = groupService.selectByGroup(group, pageNum, pageSize);
+        PageInfo pageInfo = new PageInfo<TGroup>(groupList);
+        return new ResponseResult<PageInfo>(ResultEnum.SUCCESS, pageInfo);
+    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
